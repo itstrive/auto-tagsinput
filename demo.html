@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>auto-tagsInput  by Strive</title>
+	<style>
+		/* 测试不需要放入实际生产环境 */
+		*{ margin:0; padding: 0; list-style: none; }
+		body{
+			margin:100px;
+		}
+		#hy-autocomplete-box2{margin-top:350px;}
+	</style>
+
+	<link rel="stylesheet" href="css/hy-autocomplete.css">
+	<script src="js/hy-autocomplete.js"></script>
+</head>
+<body>
+<div class="hy-autocomplete-box" id="hy-autocomplete-box">
+	<ul class="hy-item-list">
+		<li class="hy-input-item">
+			<input type="text" class="hy-input" placeholder="输入要搜索的东西">
+		</li>
+	</ul>
+	<ol class="hy-show-list"></ol>
+</div>
+
+<div class="hy-autocomplete-box" id="hy-autocomplete-box2">
+	<ul class="hy-item-list">
+		<li class="hy-input-item">
+			<input type="text" class="hy-input" placeholder="输入要搜索的东西">
+		</li>
+	</ul>
+	<ol class="hy-show-list"></ol>
+</div>
+
+<script>
+	//http://120.55.119.118:8088/oneseason-web-boss/demo/list.do?kw=asjajska&callback=abc
+	/*
+	*   要求数据接口返回的数据格式:  要求 jsonp接口
+	*   [{id: 0,value: "value0"},{id: 1,value: "value1"},{id: 2,value: "value2"}....]
+	 */
+	(function(){
+		var dupArr=[];
+		hyAutoComplete({
+			input:'#hy-autocomplete-box .hy-input',
+			url:'http://120.55.119.118:8088/oneseason-web-boss/demo/list.do',
+			keyname:'kw', //给后台的搜索关键词的 key
+			cbName:'callback',
+			success:function(aaa){
+				hyAutoComplete.renderDOM({
+					renderBox:'#hy-autocomplete-box',
+					data:aaa,
+					fnClick:function(data){
+						alert(JSON.stringify(data));
+
+						data.input.value='';
+					},
+					fnClose:function(data){
+						alert(JSON.stringify(data));
+					},
+					fnDup:function(data){
+						alert(data.id+',已经添加过了^_^');
+					},
+					dupArr:dupArr
+				})
+			}
+		})
+	})();
+
+	;(function(){
+		var dupArr=[];
+		hyAutoComplete({
+			input:'#hy-autocomplete-box2 .hy-input',
+			url:'http://120.55.119.118:8088/oneseason-web-boss/demo/list.do',
+			keyname:'kw', //给后台的搜索关键词的 key
+			cbName:'callback',
+			success:function(aaa){
+				hyAutoComplete.renderDOM({
+					renderBox:'#hy-autocomplete-box2',
+					data:aaa,
+					fnClick:function(data){
+						alert(JSON.stringify(data));
+					},
+					fnClose:function(data){
+						alert(JSON.stringify(data));
+					},
+					fnDup:function(){
+						alert('已经添加过了');
+					},
+					dupArr:dupArr
+				})
+			}
+		})
+	})()
+</script>
+</body>
+</html>
