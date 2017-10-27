@@ -1,3 +1,7 @@
+[中文说明](https://itstrive.github.io/auto-tagsinput/)  [DEMO](https://itstrive.github.io/auto-tagsinput/demo.html)
+
+> demo可能由于 https的限制看不了，可以下载下来看
+
 效果图如下:
 
 ![效果图](demo.gif)
@@ -86,7 +90,10 @@
    | hyAutoComplete(json)              | 向服务器请求数据 |
    | hyAutoComplete.renderDOM(options) | 页面渲染节点   |
 
+   ​
+
    json:(hyAutoComplete函数接收的参数)
+
    | 参数      | 说明             | 类型       |
    | ------- | -------------- | -------- |
    | input   | 输入框选择器         | string   |
@@ -95,7 +102,10 @@
    | cbName  | callback的名称    | string   |
    | success | 请求数据成功的回调      | function |
 
+   ​
+
    options:(hyAutoComplete.renderDOM接收的参数)
+
    | 参数        | 说明                                       | 类型       |
    | --------- | ---------------------------------------- | -------- |
    | renderBox | 整个组件的id(这里就是 class为 .hy-autocomplete-box的id) | string   |
@@ -105,7 +115,10 @@
    | fnDup     | 点击重复的事件回调                                | function |
    | dupArr    | 去重的全新数组，需要外界传入                           | array    |
 
+   ​
+
    其他:
+
    | 名称           | 说明                                       |
    | ------------ | ---------------------------------------- |
    | success 回调函数 | success:function(data){//data}           |
