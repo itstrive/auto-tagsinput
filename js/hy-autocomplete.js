@@ -215,7 +215,6 @@
 
 					//从数组中也删除
 					var n = dupArr.indexOf(this.parentNode.dataset.id);
-					alert(n);
 					if (n != -1) {
 						dupArr.splice(n, 1);
 					}
