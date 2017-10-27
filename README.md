@@ -1,6 +1,8 @@
-[中文说明](https://itstrive.github.io/auto-tagsinput/)  [DEMO](https://itstrive.github.io/auto-tagsinput/demo.html)
+[中文说明](https://itstrive.github.io/auto-tagsinput/)  [DEMO1](https://itstrive.github.io/auto-tagsinput/demo.html) [DEMO2](http://www.itstrive.com/auto-tagsinput/demo.html)
 
-> demo可能由于 https的限制看不了，可以下载下来看
+> demo1可能由于 https的限制看不了，可以下载下来看
+>
+> demo1和demo2一样，只是预览的地址，不在一个服务器上 ​:smile:​
 
 效果图如下:
 
